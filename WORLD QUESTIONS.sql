@@ -22,7 +22,7 @@ INNER JOIN country on city.id = country.capital
 WHERE country.name = "spain";
 
 -- 5.  Using JOIN ... ON, list all the languages spoken in the Southeast Asia region.
-SELECT city.name
-FROM city
-INNER JOIN country on city.id = country.capital
-WHERE country.name = "spain";
+SELECT DISTINCT(language)
+FROM country
+INNER JOIN countrylanguage on country.code = countrylanguage.countrycode
+WHERE country.region = "southeast asia";
